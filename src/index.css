@@ -25,7 +25,7 @@ code {
     monospace;
 }
 .Palestine {
-  background-color: var(--black-2);
+  background-color: var(--soft-black);
 }
 
 header {
@@ -40,6 +40,10 @@ header a.nav-link {
   &:hover {
     transform: scale(1.2);
   }
+}
+header .pf img {
+  width: 50px;
+  border-radius: 50%;
 }
 
 .TasksList {
@@ -175,4 +179,110 @@ header a.nav-link {
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
+}
+.landing-page {
+  margin-top: 100px;
+}
+.landing-page .intro {
+  flex: 0 0 0.5;
+  max-width: 50%;
+}
+.landing-page .intro h1 {
+  font-size: 4rem;
+}
+.landing-page .intro p {
+  font-size: 1.6rem;
+  color: var(--text-grey);
+  letter-spacing: 1px;
+}
+.landing-page .img {
+  flex: 0 0 0.5;
+  max-width: 50%;
+}
+.landing-page img {
+  width: 500px;
+}
+.landing-page button {
+  width: 220px;
+  padding: 15px;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  border: none;
+  color: white;
+  background-color: var(--skin-color);
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+@media (max-width: 768px) {
+  .landing-page {
+    flex-direction: column;
+    text-align: center;
+  }
+  .landing-page .intro,
+  .landing-page .img {
+    flex: 0 0 1;
+    max-width: 100%;
+  }
+}
+
+.profile {
+  display: flex;
+  margin-top: 80px;
+  gap: 100px;
+}
+
+@media (max-width: 999px) {
+  .profile {
+    flex-direction: column;
+  }
+}
+
+.profile .profile-pic .img {
+  width: 400px;
+  padding: 4px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #77777725;
+}
+.profile img {
+  border-radius: 10px;
+}
+.info-box {
+  margin: 40px 0;
+}
+.info-box label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+.info-box input {
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 3px solid var(--skin-color);
+  transition: all 0.3s ease;
+  &:focus {
+    outline: none;
+    font-size: 1.2rem;
+  }
+}
+.profile button,
+.profile .img-lbl {
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  color: white;
+  background-color: var(--skin-color);
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  &:hover {
+    opacity: 0.8;
+  }
 }
