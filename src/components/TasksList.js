@@ -2,7 +2,7 @@ import Task from "./Task";
 const TasksList = () => {
   return (
     <div className="TasksList">
-      <h3 >7 tasks</h3>
+      <span>7 tasks</span>
       <div className="list">
         <Task />
       </div>

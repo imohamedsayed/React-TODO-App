@@ -1,4 +1,4 @@
-import errorImg from "./error.png";
+import errorImg from "../assets/images/error.png";
 const Error = ({ error }) => {
   return (
     <div className="Error" style={{ textAlign: "center", marginTop: "40px" }}>

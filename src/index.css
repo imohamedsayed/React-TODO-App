@@ -35,11 +35,20 @@ header {
   z-index: 1000;
   top: 0;
 }
-header a.nav-link {
+header a.nav-link,
+.tasks a {
   transition: all 0.3s ease;
+  padding: 5px 8px;
+  border-radius: 10px;
   &:hover {
     transform: scale(1.2);
   }
+}
+
+header a.active,
+.tasks a.active {
+  background: var(--skin-color);
+  color: white;
 }
 header .pf img {
   width: 50px;
@@ -57,7 +66,6 @@ header .pf img {
   padding: 10px;
   border-radius: 20px;
   &:hover {
-    transform: scale(1.02);
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   }
 }
@@ -68,6 +76,7 @@ header .pf img {
 }
 .task .img img {
   border-radius: 15px;
+  width: 300px;
 }
 .task .preview {
   padding: 10px;
@@ -285,4 +294,16 @@ header .pf img {
   &:hover {
     opacity: 0.8;
   }
+}
+
+.all-tasks-container {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.not-found {
+  margin-top: 80px;
+}
+.not-found img {
+  width: 500px;
 }

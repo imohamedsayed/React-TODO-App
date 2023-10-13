@@ -1,4 +1,4 @@
-import intro from "./intro.svg";
+import intro from "../assets/images/intro.svg";
 import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
   const negative = useNavigate();

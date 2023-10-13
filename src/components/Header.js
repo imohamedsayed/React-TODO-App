@@ -1,6 +1,6 @@
-import logo from "./logo.png";
-import user from "./user.jpg";
-import { Link } from "react-router-dom";
+import logo from "../assets/images/logo.png";
+import user from "../assets/images/user.jpg";
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header className="Header d-flex justify-content-between align-items-center p-3 px-4">
@@ -13,30 +13,6 @@ const Header = () => {
       <div className="navs">
         <ul className="list-unstyled d-flex gap-4 align-items-center p-0 m-0">
           <li>
-            <Link className="nav-link fs-5 " to="/tasks">
-              My tasks
-            </Link>
-          </li>
-          <li>
-            <Link className="nav-link fs-5" to="/tasks/create">
-              Add task
-            </Link>
-          </li>
-          <li>
-            <Link to="/profile">
-              <div className="pf">
-                <img
-                  src={user}
-                  className="img-fluid"
-                  alt="user"
-                  title="profile"
-                />
-              </div>
-            </Link>
-          </li>
-        </ul>
-        {/* <ul className="list-unstyled d-flex gap-4 align-items-center p-0 m-0">
-          <li>
             <Link className="nav-link fs-5 " to="/signup">
               <span className="btn btn-light">Sign up</span>
             </Link>
@@ -46,7 +22,24 @@ const Header = () => {
               <span className="btn btn-outline-light">Login</span>
             </Link>
           </li>
-        </ul> */}
+          <li>
+            <NavLink className="nav-link fs-5" to="/tasks">
+              Tasks
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/profile">
+              <div className="pf">
+                <img
+                  src={user}
+                  className="img-fluid"
+                  alt="user"
+                  title="profile"
+                />
+              </div>
+            </NavLink>
+          </li>
+        </ul>
       </div>
     </header>
   );

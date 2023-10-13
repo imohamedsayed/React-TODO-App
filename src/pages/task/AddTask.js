@@ -1,4 +1,4 @@
-import imgUpload from "./imgUpload.svg";
+import imgUpload from "../../assets/images/imgUpload.svg";
 import { useState } from "react";
 const AddTask = () => {
   // Variables

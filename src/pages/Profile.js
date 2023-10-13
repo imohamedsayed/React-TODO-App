@@ -1,4 +1,4 @@
-import user from "./user.jpg";
+import user from "../assets/images/user.jpg";
 const Profile = () => {
   const changePlaceholder = (e) => {
     const placeholder = document.querySelector("#img");

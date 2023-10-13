@@ -1,5 +1,5 @@
-import task from "./task.jpg";
-
+import task from "../assets/images/task.jpg";
+import user from "../assets/images/user.jpg";
 const Task = () => {
   return (
     <div className="task d-flex">
@@ -7,6 +7,9 @@ const Task = () => {
         <img src={task} className="img-fluid" alt="" />
       </div>
       <div className="preview">
+        <span className="d-block mb-1">
+          <img src={user} width="30px" alt="" /> Mohamed Sayed
+        </span>
         <p className="title">Math Homework</p>
         <p className="description">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ipsa
