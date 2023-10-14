@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../components/Header";
 import Palestine from "../pages/Palestine";
 import { ToastContainer } from "react-toastify";

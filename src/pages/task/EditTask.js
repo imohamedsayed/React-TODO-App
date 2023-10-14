@@ -1,7 +1,8 @@
-import { Form, redirect } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import imgUpload from "../../assets/images/imgUpload.svg";
 import { useState } from "react";
-const AddTask = () => {
+import { useLoaderData } from "react-router-dom";
+const EditTask = () => {
   // Variables
   const [loading, setLoading] = useState(false);
   const [title, setTitle] = useState("");
@@ -9,6 +10,7 @@ const AddTask = () => {
   const [deadline, setDeadline] = useState("");
   const [image, setImage] = useState("");
 
+  const task = useLoaderData();
   // Functions
   const changeImagePlaceholder = (uploadedImage) => {
     const placeholder = document.querySelector("#img-placeholder");
@@ -19,14 +21,16 @@ const AddTask = () => {
   // Ui
   return (
     <div className="add-task">
-      <Form method="post" action="/tasks/create">
+      <form>
+        <p className="mb-5 text-center ">
+          <b>Update</b> : taskname
+        </p>
         <div className="form-field">
           <label>Title:</label>
           <input
             type="text"
             placeholder="task title..."
             value={title}
-            name="title"
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
@@ -36,7 +40,6 @@ const AddTask = () => {
             type="text"
             placeholder="task description..."
             value={description}
-            name="description"
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
@@ -45,7 +48,6 @@ const AddTask = () => {
           <input
             type="date"
             value={deadline}
-            name="deadline"
             onChange={(e) => setDeadline(e.target.value)}
           />
         </div>
@@ -60,7 +62,6 @@ const AddTask = () => {
             type="file"
             hidden
             id="img"
-            name="image"
             onChange={(e) => {
               changeImagePlaceholder(e.target.files[0]);
             }}
@@ -71,7 +72,7 @@ const AddTask = () => {
           </label>
         </div>
         <div className="submit text-center ">
-          {!loading && <button>Add Task</button>}
+          {!loading && <button>Update</button>}
           {loading && (
             <button disabled>
               {" "}
@@ -80,24 +81,17 @@ const AddTask = () => {
             </button>
           )}
         </div>
-      </Form>
+      </form>
     </div>
   );
 };
+export default EditTask;
 
-export const AddTaskAction = async ({ request }) => {
-  const data = await request.formData();
+// loader
+export const taskLoader = async ({ params }) => {
+  const { id } = params;
 
-  const dataToBeSent = {
-    title: data.get("title"),
-    description: data.get("description"),
-    deadline: data.get("deadline"),
-    image: data.get("image"),
-  };
+  // fetch
 
-  console.log(dataToBeSent);
-
-  return redirect("/tasks");
+  return {};
 };
-
-export default AddTask;

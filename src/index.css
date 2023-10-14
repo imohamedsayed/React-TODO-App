@@ -80,16 +80,20 @@ header .pf img {
 }
 .task .preview {
   padding: 10px;
-  padding-right: 85px;
+  flex: 1;
 }
 .task .preview .title {
   font-weight: bold;
   font-size: 1.2rem;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  &:hover {
+    font-size: 1.3rem;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
-.task .preview .description {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+
 .task .status {
   display: grid;
   place-content: center;

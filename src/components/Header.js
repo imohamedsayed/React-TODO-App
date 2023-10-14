@@ -13,12 +13,12 @@ const Header = () => {
       <div className="navs">
         <ul className="list-unstyled d-flex gap-4 align-items-center p-0 m-0">
           <li>
-            <Link className="nav-link fs-5 " to="/signup">
+            <Link className="nav-link" to="/signup">
               <span className="btn btn-light">Sign up</span>
             </Link>
           </li>
           <li>
-            <Link className="nav-link fs-5" to="/login">
+            <Link className="nav-link  " to="/login">
               <span className="btn btn-outline-light">Login</span>
             </Link>
           </li>

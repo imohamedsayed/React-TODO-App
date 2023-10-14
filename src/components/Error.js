@@ -1,7 +1,10 @@
+import { useRouteError } from "react-router-dom";
 import errorImg from "../assets/images/error.png";
 const Error = ({ error }) => {
+  const err = useRouteError()?.message || error;
+
   return (
-    <div className="Error" style={{ textAlign: "center", marginTop: "40px" }}>
+    <div className="Error " style={{ textAlign: "center", marginTop: "200px" }}>
       <img src={errorImg} style={{ width: "150px" }} alt="" />
       <p
         style={{
@@ -11,7 +14,7 @@ const Error = ({ error }) => {
           fontSize: "1.5rem",
         }}
       >
-        {error}
+        {err}
       </p>
     </div>
   );
